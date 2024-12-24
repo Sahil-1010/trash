@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+      body {
+            /* overflow: hidden; */
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .back.open .back-content {
+            display: block;
+        }
+
+        .back-content {
+            position: relative;
+            z-index: 2;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+            color: #ffffff;
+            -webkit-text-stroke: 0.5px rgb(203, 199, 199);
+            text-align: center;
+            padding: 1.5rem;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+            /* opacity: 0; */
+            /* visibility: hidden; */
+            animation: fadeIn 1s forwards;
+        }
+
+        h1,
+        h2,
+        p {
+            margin: 0;
+            padding: 0;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-top: 20px;
+            animation: slideIn 1s forwards;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 0;
+            animation: slideIn 1.5s forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .heart {
+            font-size: 6rem;
+            color: #fd199e;
+            margin: 20px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px auto;
+            animation: fadeIn 2s forwards;
+        }
+
+        .gallery img {
+            border-radius: 10px;
+            margin: 1rem;
+            height: auto;
+            width: 100%;
+            max-width: 12rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        a {
+            color: yellow;
+            text-decoration: none;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        a:hover {
+            color: #ffcc00;
+        }
+    .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+</style>
+<body>
+    <div class="back">
+        <div class="back-content">
+            <div class="video-background">
+                <video autoplay loop muted>
+                    <source src="y2mate.com - Moving Gradient Background_1080p.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+            </div>
+            <h1>Happy Birthday Shruti! 🎉</h1>
+            <h2>My Candy, Bubi, Aluvate ❤️</h2>
+            <div class="heart">❤️</div>
+            <h2>You are officially 21 and even more amazing! Here is to celebrate your special day and our unforgettable journey of 3 years together. 🥂</h2>
+            <h3>Here is a small gift for you deer ❤️💘➡️<a href="question.html">More</a></h3>
+            <div class="gallery">
+                <img src="photo1.jpg" alt="Memories">
+                <img src="photo2.jpg" alt="Memories">
+                <img src="photo3.jpg" alt="Memories">
+                <img src="photo4.jpg" alt="Memories">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

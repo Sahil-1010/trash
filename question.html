@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Secret Number... 😁</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: #fff;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        input {
+            font-size: 1.2rem;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        button {
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            background-color: #ff5f6d;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff2e42;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <script>
+        async function checkBattery() {
+            const input = document.querySelector('input').value;
+            const battery = await navigator.getBattery();
+            const batteryPercentage = Math.round(battery.level * 100);
+
+            if (batteryPercentage >= 68 && batteryPercentage <= 70) {
+                if (parseInt(input) === batteryPercentage) {
+                    alert("Correct! Redirecting to the gift🎁🎁...");
+                    window.location.href = "https://drive.google.com/drive/folders/1nA90rRfATq7GXN2B50OTMNuB5RIDTelN?usp=drive_link"; // Replace with your link
+                } else {
+                    alert("Your guess is correct Battery percentage is not in the desired range 🤦‍♂️");
+                }
+            } else {
+                alert(`Battery percentage is ${batteryPercentage}. It's not Desired 😒`);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Guess The Secret Number... 😶‍🌫️</h1>
+        <input type="number" placeholder="ENTER HERE (EX:100)" id="guess"> 
+        <button onclick="checkBattery()">SUBMIT</button>
+    </div>
+</body>
+</html>
